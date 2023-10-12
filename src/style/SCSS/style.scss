@@ -1,0 +1,67 @@
+@import "./_variables.scss";
+
+body{
+    margin: 0 3%;
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+    font-weight: 400;
+}
+
+p{
+    margin: 0;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.btn-reset{
+    padding: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.checkbox-label{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    input[type="checkbox"]{
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+    }
+    &::before{
+        display: inline-block;
+        margin-right: 12px;
+        content: '';
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+        border: 1px solid $--color-border{
+            radius: 3px;
+        } 
+    }    
+    &:hover::before, &:focus-within::before{
+        border-color: $--color-brand;
+    }  
+    &:has(input:checked){
+        &::before{
+            border-color: $--color-brand;
+            background: {
+                color: $--color-brand;
+                image: url("@/assets/img/svg/Tick.svg");
+                position: 50%;
+                repeat: no-repeat;
+            }
+        }
+    }   
+}
+
+

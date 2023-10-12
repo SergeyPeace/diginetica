@@ -1,0 +1,30 @@
+@mixin font-face($family, $file, $path, $weight: normal, $style: normal){
+  @font-face{
+    font: {
+        family: $family;
+        weight: $weight;
+        style: $style;
+    }
+    src: url($path + $file + '.ttf') format('ttf');    
+  }
+}
+
+@mixin btn($bcolor: $--color-brand){
+    padding: 11px 15px;
+    border: 1px solid $bcolor{
+        radius: 4px;
+    }
+    font: {
+        family: 'PTSans', sans-serif;
+        weight: bold;
+        size: 14px;
+    }
+}
+
+@mixin input($bcolor:$--color-border){
+  padding: 9px;
+  padding-left: 25px;
+  border: 1px solid $bcolor{
+      radius: 4px;
+  };
+}
